@@ -1,0 +1,15 @@
+<div class = "sections">
+    <h3>Разделы</h3>
+    <% @sections.each do |single| %>
+        <div class=section-block> 
+            <div class = <%= single.name %>>
+                <%= image_tag("#{single.logo_image}") %>
+            </div>
+            <div class="section-brief">
+                <div class="section-title">
+                <p><%= single.title %></P>
+                </div>
+            </div>
+        </div>     
+    <% end %>
+</div>
