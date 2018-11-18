@@ -1,0 +1,5 @@
+[12:624] -A f2b-sshd -s 62.182.52.40/32 -j REJECT --reject-with icmp-port-unreachable
+iptables -D  f2b-sshd -s 62.182.52.40/32 -j REJECT --reject-with icmp-port-unreachable
+
+
+bundle exec rails g model mark stars:integer user:references post:references visible:boolean
