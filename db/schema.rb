@@ -49,17 +49,18 @@ ActiveRecord::Schema.define(version: 2018_11_19_070405) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.bigint "category_id"
     t.bigint "user_id"
     t.boolean "visible", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["title"], name: "index_posts_on_title", unique: true
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "seos", force: :cascade do |t|
     t.string "title"
-    t.string "string"
     t.string "description"
     t.string "keywords"
     t.integer "seoable_id"
@@ -85,5 +86,6 @@ ActiveRecord::Schema.define(version: 2018_11_19_070405) do
   add_foreign_key "comments", "users"
   add_foreign_key "marks", "posts"
   add_foreign_key "marks", "users"
+  add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
 end

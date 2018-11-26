@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  belongs_to :category
   belongs_to :user, dependent: :delete
   has_many :comments, as: :commentable
   has_many :commentators, through: :comments, source: :user, source_type: :User  

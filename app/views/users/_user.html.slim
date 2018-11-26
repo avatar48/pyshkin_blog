@@ -1,0 +1,7 @@
+tr
+  td = user.name
+  td = user.email
+  td = user.posts.count
+  td = link_to 'Показать', user
+  td = link_to 'Редактировать', edit_user_path(user)
+  td = link_to 'Удалить', user, data: { confirm: 'Are you sure?' }, method: :delete

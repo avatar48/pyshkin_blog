@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @user.name
+p
+  strong Email:
+  = @user.email
+
+table
+  thead
+    tr
+      th Тема
+      th Видимость
+      th
+      th
+      th
+
+  tbody
+    = render partial: 'post', collection: @posts
+
+=> link_to 'Редактировать', edit_user_path(@user)
+'|
+=< link_to 'Назад', users_path

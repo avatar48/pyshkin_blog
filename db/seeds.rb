@@ -7,10 +7,31 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'ffaker'
+mysql = Category.create(name: "MySql", logo_image: "mysql.png", title: "Темы посвященные mysql")
+linux = Category.create(name: "Linux", logo_image: "linux.png", title: "Темы посвященные linux")
+rails = Category.create(name: "Rails", logo_image: "rails.png", title: "Темы посвященные Ruby on Rails")
 
 
-5.times do
+10.times do
   user = User.create(name: "#{FFaker::Name.name}", email: "#{FFaker::Internet.email}", moderator: true, creator: true)
-  post = Post.create(title: "#{FFaker::JobBR.title}", body: "#{FFaker::LoremRU.paragraphs}", user: user, visible: true)
-  comment = Comment.create(user: user, commentable: post, body: "#{FFaker::LoremRU.word}", visible: true )
+  post = Post.create(title: "#{FFaker::JobBR.title}", body: "#{FFaker::LoremRU.paragraphs}", user: user, category: mysql, visible: true)
+  35.times do
+    comment = Comment.create(user: user, commentable: post, body: "#{FFaker::LoremRU.word}", visible: true )
+  end
+end
+
+10.times do
+  user = User.create(name: "#{FFaker::Name.name}", email: "#{FFaker::Internet.email}", moderator: true, creator: true)
+  post = Post.create(title: "#{FFaker::JobBR.title}", body: "#{FFaker::LoremRU.paragraphs}", user: user, category: linux, visible: true)
+  35.times do
+    comment = Comment.create(user: user, commentable: post, body: "#{FFaker::LoremRU.word}", visible: true )
+  end
+end
+
+10.times do
+  user = User.create(name: "#{FFaker::Name.name}", email: "#{FFaker::Internet.email}", moderator: true, creator: true)
+  post = Post.create(title: "#{FFaker::JobBR.title}", body: "#{FFaker::LoremRU.paragraphs}", user: user, category: rails, visible: true)
+  35.times do
+    comment = Comment.create(user: user, commentable: post, body: "#{FFaker::LoremRU.word}", visible: true )
+  end
 end
