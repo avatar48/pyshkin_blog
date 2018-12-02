@@ -1,0 +1,14 @@
+p#notice = notice
+table
+  thead
+    tr
+      th Тема
+      th Видимость
+      th
+      th
+      th
+
+  tbody
+    = render partial: 'post', collection: @posts
+
+= link_to 'Назад', posts_path

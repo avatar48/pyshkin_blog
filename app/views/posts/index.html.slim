@@ -1,0 +1,22 @@
+h1 Список постов
+
+table
+  thead
+    tr
+      th Тема
+      th Пост
+      th Пользователь
+      th Видимость
+      th
+      th
+      th
+
+  tbody
+    = render partial: 'post', collection: @posts
+
+br
+
+= link_to 'Создать пост', new_post_path, { :class=>"button-create" } 
+
+p
+  = paginate @posts

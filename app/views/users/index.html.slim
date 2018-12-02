@@ -1,0 +1,17 @@
+h1 Список пользователей
+
+table
+  thead
+    tr
+      th Имя
+      th Email
+      th Количество тем
+      th
+      th
+      th
+
+  tbody
+    = render partial: 'user', collection: @users  
+
+br
+= link_to 'Создать пользователя', new_user_path, { :class=>"button-create" } 
