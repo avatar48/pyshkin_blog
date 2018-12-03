@@ -13,7 +13,8 @@ rails = Category.create(name: "Rails", logo_image: "rails.png", title: "Темы
 
 
 10.times do
-  user = User.create(name: "#{FFaker::Name.name}", email: "#{FFaker::Internet.email}", moderator: true, creator: true)
+  email = "#{FFaker::Internet.email}"
+  user = User.create(name: "#{FFaker::Name.name}", email: email, password: email, moderator: true, creator: true)
   post = Post.create(title: "#{FFaker::JobBR.title}", body: "#{FFaker::LoremRU.paragraphs}", user: user, category: mysql, visible: true)
   35.times do
     comment = Comment.create(user: user, commentable: post, body: "#{FFaker::LoremRU.word}", visible: true )
@@ -21,7 +22,8 @@ rails = Category.create(name: "Rails", logo_image: "rails.png", title: "Темы
 end
 
 10.times do
-  user = User.create(name: "#{FFaker::Name.name}", email: "#{FFaker::Internet.email}", moderator: true, creator: true)
+  email = "#{FFaker::Internet.email}"
+  user = User.create(name: "#{FFaker::Name.name}", email: email, password: email, moderator: true, creator: true)
   post = Post.create(title: "#{FFaker::JobBR.title}", body: "#{FFaker::LoremRU.paragraphs}", user: user, category: linux, visible: true)
   35.times do
     comment = Comment.create(user: user, commentable: post, body: "#{FFaker::LoremRU.word}", visible: true )
@@ -29,7 +31,8 @@ end
 end
 
 10.times do
-  user = User.create(name: "#{FFaker::Name.name}", email: "#{FFaker::Internet.email}", moderator: true, creator: true)
+  email = "#{FFaker::Internet.email}"
+  user = User.create(name: "#{FFaker::Name.name}", email: email, password: email, moderator: true, creator: true)
   post = Post.create(title: "#{FFaker::JobBR.title}", body: "#{FFaker::LoremRU.paragraphs}", user: user, category: rails, visible: true)
   35.times do
     comment = Comment.create(user: user, commentable: post, body: "#{FFaker::LoremRU.word}", visible: true )

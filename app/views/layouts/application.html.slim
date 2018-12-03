@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title
+      | PyshkinBlog
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  body
+    header#header
+      nav
+        ul.menu
+          li.name
+            = link_to 'Главная', root_path
+          li.name
+            = link_to 'Статьи', posts_path
+          li.name
+            = link_to 'Пользователи', users_path
+          li.name
+            = link_to 'Обо мне', about_me_index_path
+          = render 'shared/heder'
+    .container
+      = yield
+    footer
+      label
+        = Time.current.year

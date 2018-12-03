@@ -1,0 +1,13 @@
+.sections
+  h3
+    | Разделы
+  - @sections.each do |single|
+    .section-block
+      |  <div class = 
+      = single.name
+      | > 
+      = image_tag("#{single.logo_image}")
+    .section-brief
+      .section-title
+        p
+          = single.title

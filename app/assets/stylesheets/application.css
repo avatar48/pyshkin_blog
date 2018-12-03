@@ -33,7 +33,12 @@
     background-color: #333;
 }
 
-.menu li {
+.login {
+    float: right;
+}
+
+
+.menu .name {
     float: left;
 }
 
