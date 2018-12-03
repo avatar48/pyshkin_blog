@@ -1,14 +1,17 @@
 doctype html
-html
+html lang="ru"
   head
-    title
-      | PyshkinBlog
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title == content_for?(:title) ? yield(:title) : "PyshkinBlog"
+
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tag
+
   body
-    header#header
+    header
       nav
         ul.menu
           li.name
@@ -18,10 +21,10 @@ html
           li.name
             = link_to 'Пользователи', users_path
           li.name
-            = link_to 'Обо мне', about_me_index_path
+             = link_to 'Обо мне', about_me_index_path
           = render 'shared/heder'
     .container
       = yield
-    footer
-      label
-        = Time.current.year
+      footer
+        label
+          = Time.current.year
