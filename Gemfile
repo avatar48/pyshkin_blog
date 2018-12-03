@@ -11,6 +11,7 @@ gem 'omniauth-vkontakte'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'sprockets-es6'
+gem 'dotenv-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record

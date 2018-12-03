@@ -287,6 +287,5 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
-  config.omniauth :facebook, "APP_ID", "APP_SECRET"
-  config.omniauth :vkontakte, "APP_ID", "APP_SECRET"
+  config.omniauth :vkontakte, ENV['API_KEY'], ENV['API_SECRET']
 end

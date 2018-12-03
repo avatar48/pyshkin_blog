@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     get 'omniauth_callbacks/facebook'
     get 'omniauth_callbacks/vkontakte'
   end
-  devise_for :users
+  # devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
   resources :posts
   get 'about_me/index'
