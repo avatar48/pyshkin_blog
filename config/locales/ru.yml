@@ -1,0 +1,12 @@
+ru:
+  label:
+    log_in: Вход
+    log_out: Выход
+    hello: Привет, %s
+    remember_me: Запомнить меня
+    forgot_password: Восстановить пароль?
+    sign_up: Регистрация
+    registration: Регистрация
+    name: Имя
+    password: Пароль
+    password_confirm: Подтверждение пароля

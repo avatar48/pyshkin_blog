@@ -12,6 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation
+ *= require foundation_and_overrides
+
  */
  @import url(http://fonts.googleapis.com/css?family=Lato:400,700italic);
  * { padding: 0; margin: 0; }
@@ -33,7 +36,12 @@
     background-color: #333;
 }
 
-.menu li {
+.login {
+    float: right;
+}
+
+
+.menu .name {
     float: left;
 }
 
@@ -107,4 +115,13 @@ footer {
     cursor: pointer;
     background-color:#111;
     color: #fefefe;
+}
+
+
+.auth_box{
+    max-width: 400px;
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 40px;
+    text-align: center!important;
 }
