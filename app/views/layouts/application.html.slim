@@ -6,25 +6,28 @@ html lang="ru"
 
     title == content_for?(:title) ? yield(:title) : "PyshkinBlog"
 
-    = stylesheet_link_tag "application"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_pack_tag "application"
+    = javascript_pack_tag "application"
     = csrf_meta_tag
 
   body
-    header
-      nav
-        ul.menu
-          li.name
-            = link_to 'Главная', root_path
-          li.name
-            = link_to 'Статьи', posts_path
-          li.name
-            = link_to 'Пользователи', users_path
-          li.name
-             = link_to 'Обо мне', about_me_index_path
-          = render 'shared/heder'
-    .container
-      = yield
-      footer
+    div.container
+      header
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+          div.container-fluid
+            ul.nav.navbar-nav
+              li.nav-item
+                = link_to 'Главная', root_path, class: "nav-link"
+              li.nav-item
+                = link_to 'Статьи', posts_path, class: "nav-link"
+              li.nav-item
+                = link_to 'Пользователи', users_path, class: "nav-link"
+              li.nav-item
+                = link_to 'Обо мне', about_me_index_path, class: "nav-link"
+            ul.nav.navbar-nav.navbar-right
+              = render 'shared/heder'
+      div.container
+        = yield
+      footer.fixed-bottom
         label
           = Time.current.year

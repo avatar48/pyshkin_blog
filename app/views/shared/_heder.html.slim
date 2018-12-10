@@ -1,10 +1,10 @@
     - if user_signed_in?
-      li.login
-        = link_to t('label.log_out'), destroy_user_session_path, method: :delete
-      li.login
-        = link_to t('label.hello') % current_user.name, edit_user_path(current_user)
+      li.nav-item
+        = link_to t('label.log_out'), destroy_user_session_path, method: :delete, class: "nav-link"
+      li.nav-item
+        = link_to t('label.hello') % current_user.name, edit_user_path(current_user), class: "nav-link"
     - else
-      li.login
-        = link_to t('label.log_in'), new_user_session_path
-      li.login
-        = link_to t('label.registration'), new_user_registration_path
+      li.nav-item
+        = link_to t('label.log_in'), new_user_session_path, class: "nav-link"
+      li.nav-item
+        = link_to t('label.registration'), new_user_registration_path, class: "nav-link"
