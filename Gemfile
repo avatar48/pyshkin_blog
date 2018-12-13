@@ -13,6 +13,7 @@ gem 'autoprefixer-rails'
 gem 'sprockets-es6'
 gem 'dotenv-rails'
 gem 'webpacker', '~> 3.5', '>= 3.5.5'
+gem 'ffaker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
@@ -48,7 +49,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'letter_opener'
-  gem 'ffaker'
 end
 
 group :development do
